@@ -1,4 +1,4 @@
-/* Simple slider, contact form validation, and small utilities */
+
 
 // === Universal Slider Script ===
 (function () {
@@ -100,44 +100,5 @@
 })();
 
 
-// Contact Form (frontend-only)
-(function () {
-  const form = document.getElementById('contactForm');
-  const formMsg = document.getElementById('formMsg');
-
-  if (!form) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    formMsg.textContent = '';
-    const data = new FormData(form);
-    const name = (data.get('name') || '').trim();
-    const email = (data.get('email') || '').trim();
-    const message = (data.get('message') || '').trim();
-
-    if (!name) return showMsg('Please enter your name', true);
-    if (!validateEmail(email)) return showMsg('Please enter a valid email address', true);
-    if (!message) return showMsg('Please enter a message', true);
-
-    // This is frontend-only. Replace with real API call if needed.
-    showMsg('Message sent (demo). I will contact you soon.', false);
-    form.reset();
-  });
-
-  function showMsg(text, isError) {
-    formMsg.textContent = text;
-    formMsg.style.color = isError ? '#f28b82' : '#9bdca3';
-  }
-
-  function validateEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
-})();
-
-// small utility: year
-(function () {
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-})();
 
 
