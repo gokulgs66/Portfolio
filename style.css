@@ -262,7 +262,9 @@ body {
   padding: 12px 12px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  align-items: center;    
+  text-align: center;
+  gap: 10px;
 }
 
 .slide-body h3 {
@@ -275,13 +277,14 @@ body {
 }
 
 .link-btn {
-  align-self: flex-start;
-  text-decoration: none;
+    display: inline-block;
+  margin-top: 6px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
   padding: 8px 12px;
   border-radius: 8px;
-  background: var(--accent, #55efc4);
-  color: #07210b;
-  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
 }
 
 /* slider buttons */
